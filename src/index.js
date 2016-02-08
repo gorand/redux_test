@@ -1,45 +1,16 @@
-'use strict';
-import 'babel-polyfill';
+import 'babel-polyfill'
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import App from './containers/App'
+import configureStore from './store/configureStore'
+import './index.css'
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import createBrowserHistory from 'history/lib/createBrowserHistory';
-import { Provider } from 'react-redux';
-import { Router, Route, IndexRoute } from 'react-router';
+const store = configureStore()
 
-import configureStore from './store/configureStore';
-
-import App from './containers/app/App';
-import Login from './containers/login/Login';
-import RestrictPage from './containers/misc/RestrictPage';
-import Home from './containers/home/Home';
-import UsersPage from './containers/user/UsersPage';
-import ReposPage from './containers/repo/ReposPage';
-import About from './containers/about/About';
-import List from './containers/list/List';
-import NotFound from './containers/misc/NotFound';
-
-import './index.css';
-
-const history = createBrowserHistory();
-const store = configureStore();
-
-ReactDOM.render(
+render(
   <Provider store={store}>
-    <Router history={history}>
-        <Route path="/" component={App}>
-          <IndexRoute component={Home}/>
-          <Route path="/about" component={About}/>
-          <Route path="/entrys" component={List}/>
-          <Route path="/login" component={Login}/>
-          <Route component={RestrictPage}>
-            <Route path="/users" component={UsersPage} />
-            <Route path="/repos" component={ReposPage} />
-          </Route>
-
-          <Route path="*" component={NotFound}/>
-      </Route>
-      </Router>
+    <App />
   </Provider>,
   document.getElementById('root')
-);
+)
