@@ -12,14 +12,6 @@ export function editTodo(id, text) {
   return { type: types.EDIT_TODO, id, text }
 }
 
-export function completeTodo(id) {
-  return { type: types.COMPLETE_TODO, id }
-}
-
-export function completeAll() {
-  return { type: types.COMPLETE_ALL }
-}
-
 export function clearCompleted() {
   return { type: types.CLEAR_COMPLETED }
 }
