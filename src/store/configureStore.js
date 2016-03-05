@@ -1,8 +1,15 @@
-import { createStore } from 'redux'
+import { compose, createStore } from 'redux'
 import rootReducer from '../reducers'
 
+import persistState, { mergePersistedState } from 'redux-localstorage';
+
 export default function configureStore(initialState) {
-  const store = createStore(rootReducer, initialState)
+  
+  const createPersistentStore = compose(
+    persistState()
+  )(createStore)
+
+  const store = createPersistentStore(rootReducer, initialState)
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
