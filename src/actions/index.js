@@ -15,3 +15,7 @@ export function editTodo(id, text) {
 export function clearCompleted() {
   return { type: types.CLEAR_COMPLETED }
 }
+
+export function toggleList() {
+  return { type: types.TOGGLE_LIST }
+}
