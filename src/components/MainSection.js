@@ -28,7 +28,11 @@ class MainSection extends Component {
 
     return (
       <section className="main">
-        <button onClick={() => this.handleClickShow()}>Show all</button>
+        <button onClick={() => this.handleClickShow()}>
+        Список заметок
+        <span> { todos.length }</span>
+        </button>
+        
         <ul className={classnames('todo-list', { 
             hidden: this.state.showList
           })}>

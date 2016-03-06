@@ -43,6 +43,7 @@ class TodoItem extends Component {
           <label onDoubleClick={this.handleDoubleClick.bind(this)}>
             {todo.text}
           </label>
+          <sub>{todo.date}</sub>
           <button className="destroy"
                   onClick={() => deleteTodo(todo.id)} />
         </div>

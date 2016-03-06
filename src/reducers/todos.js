@@ -2,8 +2,9 @@ import { ADD_TODO, DELETE_TODO, EDIT_TODO, CLEAR_COMPLETED } from '../constants/
 
 const initialState = [
   {
-    text: 'Use Redux',
+    text: 'Тебе будет о чём рассказать',
     completed: false,
+    date: null,
     id: 0
   }
 ]
@@ -15,7 +16,8 @@ export default function todos(state = initialState, action) {
         {
           id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
           completed: false,
-          text: action.text
+          text: action.text,
+          date: +new Date(),
         }, 
         ...state
       ]
