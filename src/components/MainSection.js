@@ -1,39 +1,37 @@
 import React, { Component, PropTypes } from 'react'
+import classnames from 'classnames'
 import TodoItem from './TodoItem'
 
 class MainSection extends Component {
   constructor(props, context) {
     super(props, context)
+    this.state = {
+      showList: true
+    }
   }
 
   handleClearCompleted() {
     this.props.actions.clearCompleted()
   }
 
-  renderToggleAll(completedCount) {
-    const { todos, actions } = this.props
-    if (todos.length > 0) {
-      return (
-        <input className="toggle-all"
-               type="checkbox"
-               checked={completedCount === todos.length}
-               onChange={actions.completeAll} />
-      )
+  handleClickShow() {
+    if (this.state.showList) {
+      this.setState({ showList: false })
+    }
+    else {
+      this.setState({ showList: true })
     }
   }
 
   render() {
     const { todos, actions } = this.props
 
-    const completedCount = todos.reduce((count, todo) =>
-      todo.completed ? count + 1 : count,
-      0
-    )
-
     return (
       <section className="main">
-        {this.renderToggleAll(completedCount)}
-        <ul className="todo-list">
+        <button onClick={() => this.handleClickShow()}>Show all</button>
+        <ul className={classnames('todo-list', { 
+            hidden: this.state.showList
+          })}>
           {todos.map(todo =>
             <TodoItem key={todo.id} todo={todo} {...actions} />
           )}
