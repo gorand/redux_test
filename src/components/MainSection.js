@@ -5,22 +5,10 @@ import TodoItem from './TodoItem'
 class MainSection extends Component {
   constructor(props, context) {
     super(props, context)
-    this.state = {
-      showList: true
-    }
   }
 
   handleClearCompleted() {
     this.props.actions.clearCompleted()
-  }
-
-  handleClickShow() {
-    if (this.state.showList) {
-      this.setState({ showList: false })
-    }
-    else {
-      this.setState({ showList: true })
-    }
   }
 
   render() {
@@ -28,14 +16,12 @@ class MainSection extends Component {
 
     return (
       <section className="main">
-        <button onClick={() => this.handleClickShow()}>
+        <button>
         Список заметок
         <span> { todos.length }</span>
         </button>
         
-        <ul className={classnames('todo-list', { 
-            hidden: this.state.showList
-          })}>
+        <ul className={classnames('todo-list')}>
           {todos.map(todo =>
             <TodoItem key={todo.id} todo={todo} {...actions} />
           )}

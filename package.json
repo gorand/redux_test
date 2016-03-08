@@ -69,6 +69,7 @@
     "eslint-plugin-react": "^3.13.1",
     "file-loader": "^0.8.4",
     "raw-loader": "^0.5.1",
+    "react-router-redux": "^4.0.0",
     "redux-localstorage": "^0.4.0",
     "rimraf": "^2.4.3",
     "stats-webpack-plugin": "^0.2.2",
