@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
 import todos from './todos'
-import openList from './toggle'
+import timer from './timer'
 
 const rootReducer = combineReducers({
   todos,
-  openList
+  timer
 })
 
 export default rootReducer

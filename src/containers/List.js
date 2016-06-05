@@ -7,11 +7,11 @@ import * as TodoActions from '../actions'
 
 class App extends Component {
   render() {
-    const { todos, actions } = this.props
+    const { todos, actions, timer } = this.props
     return (
       <div>
         <Header addTodo={actions.addTodo} />
-        <MainSection todos={todos} actions={actions} />
+        <MainSection timer={timer} todos={todos} actions={actions} />
       </div>
     )
   }
@@ -24,7 +24,8 @@ App.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    todos: state.todos
+    todos: state.todos,
+    timer: state.timer
   }
 }
 

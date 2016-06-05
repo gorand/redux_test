@@ -1,10 +1,16 @@
 import React, { Component, PropTypes } from 'react'
 import classnames from 'classnames'
-import TodoItem from './TodoItem'
+import ListItem from './ListItem'
 
 class MainSection extends Component {
   constructor(props, context) {
     super(props, context)
+  }
+
+  componentDidMount() {
+    setInterval(() => {
+      this.props.actions.updateTime(+new Date());
+    }, 5000);
   }
 
   handleClearCompleted() {
@@ -12,7 +18,7 @@ class MainSection extends Component {
   }
 
   render() {
-    const { todos, actions } = this.props
+    const { todos, actions, timer } = this.props
 
     return (
       <section className="main">
@@ -20,14 +26,14 @@ class MainSection extends Component {
         Список заметок
         <span> { todos.length }</span>
         </button>
-        
+
         <ul className={classnames('todo-list')}>
           {todos.map(todo =>
-            <TodoItem key={todo.id} todo={todo} {...actions} />
+            <ListItem key={todo.id} todo={todo} {...actions} current={timer.currentTime} />
           )}
         </ul>
       </section>
-    )
+    );
   }
 }
 
