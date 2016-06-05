@@ -54,35 +54,35 @@ timeSince(date) {
 
 
   render() {
-    const { todo, completeTodo, deleteTodo } = this.props
+    const { entry, completeTodo, deleteTodo } = this.props
 
     let element
     if (this.state.editing) {
       element = (
-        <TextInput text={todo.text}
+        <TextInput text={entry.text}
                        editing={this.state.editing}
-                       onSave={(text) => this.handleSave(todo.id, text)} />
+                       onSave={(text) => this.handleSave(entry.id, text)} />
       )
     } else {
       element = (
         <div className="view">
           <input className="toggle"
                  type="checkbox"
-                 checked={todo.completed}
-                 onChange={() => completeTodo(todo.id)} />
+                 checked={entry.completed}
+                 onChange={() => completeTodo(entry.id)} />
           <label onDoubleClick={this.handleDoubleClick.bind(this)}>
-            {todo.text}
+            {entry.text}
           </label>
-          {this.timeSince(todo.date)}
+          {this.timeSince(entry.date)}
           <button className="destroy"
-                  onClick={() => deleteTodo(todo.id)} />
+                  onClick={() => deleteTodo(entry.id)} />
         </div>
       )
     }
 
     return (
       <li className={classnames({
-        completed: todo.completed,
+        completed: entry.completed,
         editing: this.state.editing
       })}>
         {element}
@@ -92,7 +92,7 @@ timeSince(date) {
 }
 
 ListItem.propTypes = {
-  todo: PropTypes.object.isRequired,
+  entry: PropTypes.object.isRequired,
   editTodo: PropTypes.func.isRequired,
   deleteTodo: PropTypes.func.isRequired
 }

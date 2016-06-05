@@ -18,18 +18,18 @@ class MainSection extends Component {
   }
 
   render() {
-    const { todos, actions, timer } = this.props
+    const { list, actions, timer } = this.props
 
     return (
       <section className="main">
         <button>
         Список заметок
-        <span> { todos.length }</span>
+        <span> { list.length }</span>
         </button>
 
         <ul className={classnames('todo-list')}>
-          {todos.map(todo =>
-            <ListItem key={todo.id} todo={todo} {...actions} current={timer.currentTime} />
+          {list.map(item =>
+            <ListItem key={item.id} entry={item} {...actions} current={timer.currentTime} />
           )}
         </ul>
       </section>
@@ -38,7 +38,7 @@ class MainSection extends Component {
 }
 
 MainSection.propTypes = {
-  todos: PropTypes.array.isRequired,
+  list: PropTypes.array.isRequired,
   actions: PropTypes.object.isRequired
 }
 

@@ -2,7 +2,7 @@ import { ADD_ITEM, DELETE_ITEM, EDIT_ITEM, CLEAR_COMPLETED } from '../constants/
 
 const initialState = []
 
-export default function todos(state = initialState, action) {
+export default function list(state = initialState, action) {
   switch (action.type) {
     case ADD_ITEM:
       return [
