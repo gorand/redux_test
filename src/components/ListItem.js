@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react'
 import classnames from 'classnames'
-import TextInput from './TextInput'
+import NoteInput from './NoteInput'
 
 class ListItem extends Component {
-  constructor(props, context) {
-    super(props, context)
+  constructor(props) {
+    super(props)
     this.state = {
       editing: false,
     }
@@ -16,9 +16,9 @@ class ListItem extends Component {
 
   handleSave(id, text) {
     if (text.length === 0) {
-      this.props.deleteTodo(id)
+      this.props.deleteNote(id)
     } else {
-      this.props.editTodo(id, text)
+      this.props.editNote(id, text)
     }
     this.setState({ editing: false })
   }
@@ -54,35 +54,35 @@ timeSince(date) {
 
 
   render() {
-    const { entry, completeTodo, deleteTodo } = this.props
+    const { note, completeNote, deleteNote } = this.props
 
     let element
     if (this.state.editing) {
       element = (
-        <TextInput text={entry.text}
+        <NoteInput text={note.text}
                        editing={this.state.editing}
-                       onSave={(text) => this.handleSave(entry.id, text)} />
+                       onSave={(text) => this.handleSave(note.id, text)} />
       )
     } else {
       element = (
         <div className="view">
           <input className="toggle"
                  type="checkbox"
-                 checked={entry.completed}
-                 onChange={() => completeTodo(entry.id)} />
+                 checked={note.completed}
+                 onChange={() => completeNote(note.id)} />
           <label onDoubleClick={this.handleDoubleClick.bind(this)}>
-            {entry.text}
+            {note.text}
           </label>
-          {this.timeSince(entry.date)}
+          {this.timeSince(note.date)}
           <button className="destroy"
-                  onClick={() => deleteTodo(entry.id)} />
+                  onClick={() => deleteNote(note.id)} />
         </div>
       )
     }
 
     return (
       <li className={classnames({
-        completed: entry.completed,
+        completed: note.completed,
         editing: this.state.editing
       })}>
         {element}
@@ -92,9 +92,9 @@ timeSince(date) {
 }
 
 ListItem.propTypes = {
-  entry: PropTypes.object.isRequired,
-  editTodo: PropTypes.func.isRequired,
-  deleteTodo: PropTypes.func.isRequired
+  note: PropTypes.object.isRequired,
+  editNote: PropTypes.func.isRequired,
+  deleteNote: PropTypes.func.isRequired
 }
 
 export default ListItem

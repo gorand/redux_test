@@ -1,10 +1,10 @@
 import React, { PropTypes, Component } from 'react'
-import TextInput from './TextInput'
+import NoteInput from './NoteInput'
 
 class Header extends Component {
   handleSave(text) {
     if (text.length !== 0) {
-      this.props.addTodo(text)
+      this.props.addNote(text)
     }
   }
 
@@ -18,7 +18,7 @@ class Header extends Component {
           </ul>
         </nav>
         <h1>Редактор заметок</h1>
-        <TextInput newTodo
+        <NoteInput newTodo
                        onSave={this.handleSave.bind(this)}
                        placeholder="Напишите свою заметку" />
       </header>
@@ -27,7 +27,7 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  addTodo: PropTypes.func.isRequired
+  addNote: PropTypes.func.isRequired
 }
 
 export default Header

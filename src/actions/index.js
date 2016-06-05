@@ -1,14 +1,14 @@
 import * as types from '../constants/ActionTypes'
 
-export function addTodo(text) {
+export function addNote(text) {
   return { type: types.ADD_ITEM, text }
 }
 
-export function deleteTodo(id) {
+export function deleteNote(id) {
   return { type: types.DELETE_ITEM, id }
 }
 
-export function editTodo(id, text) {
+export function editNote(id, text) {
   return { type: types.EDIT_ITEM, id, text }
 }
 

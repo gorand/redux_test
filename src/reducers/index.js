@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
-import list from './list'
-import timer from './timer'
+import notes from './notes'
+import time from './time'
 
 const rootReducer = combineReducers({
-  list,
-  timer
+  notes,
+  time
 })
 
 export default rootReducer

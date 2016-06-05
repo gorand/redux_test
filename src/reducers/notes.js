@@ -2,12 +2,12 @@ import { ADD_ITEM, DELETE_ITEM, EDIT_ITEM, CLEAR_COMPLETED } from '../constants/
 
 const initialState = []
 
-export default function list(state = initialState, action) {
+export default function notes(state = initialState, action) {
   switch (action.type) {
     case ADD_ITEM:
       return [
         {
-          id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
+          id: state.reduce((maxId, note) => Math.max(note.id, maxId), -1) + 1,
           text: action.text,
           completed: false,
           date: +new Date(),
@@ -16,19 +16,19 @@ export default function list(state = initialState, action) {
       ]
 
     case DELETE_ITEM:
-      return state.filter(todo =>
-        todo.id !== action.id
+      return state.filter(note =>
+        note.id !== action.id
       )
 
     case EDIT_ITEM:
-      return state.map(todo =>
-        todo.id === action.id ?
-          Object.assign({}, todo, { text: action.text }) :
-          todo
+      return state.map(note =>
+        note.id === action.id ?
+          Object.assign({}, note, { text: action.text }) :
+          note
       )
 
     case CLEAR_COMPLETED:
-      return state.filter(todo => todo.completed === false)
+      return state.filter(note => note.completed === false)
 
     default:
       return state
