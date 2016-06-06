@@ -1,5 +1,5 @@
-export const ADD_ITEM = 'ADD_ITEM'
-export const DELETE_ITEM = 'DELETE_ITEM'
-export const EDIT_ITEM = 'EDIT_ITEM'
+export const ADD_NOTE = 'ADD_NOTE'
+export const DELETE_NOTE = 'DELETE_NOTE'
+export const EDIT_NOTE = 'EDIT_NOTE'
 export const CLEAR_COMPLETED = 'CLEAR_COMPLETED'
 export const UPDATE_TIME = 'UPDATE_TIME'

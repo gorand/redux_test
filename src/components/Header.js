@@ -13,7 +13,7 @@ class Header extends Component {
       <header className="header">
         <nav>
           <ul>
-            <li><a href="/">Главная</a></li>
+            <li><a href="/">На главную</a></li>
             <li><a href="/list">Список заметок</a></li>
           </ul>
         </nav>

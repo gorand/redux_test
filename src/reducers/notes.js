@@ -1,10 +1,10 @@
-import { ADD_ITEM, DELETE_ITEM, EDIT_ITEM, CLEAR_COMPLETED } from '../constants/ActionTypes'
+import { ADD_NOTE, DELETE_NOTE, EDIT_NOTE, CLEAR_COMPLETED } from '../constants/ActionTypes'
 
 const initialState = []
 
 export default function notes(state = initialState, action) {
   switch (action.type) {
-    case ADD_ITEM:
+    case ADD_NOTE:
       return [
         {
           id: state.reduce((maxId, note) => Math.max(note.id, maxId), -1) + 1,
@@ -15,12 +15,12 @@ export default function notes(state = initialState, action) {
         ...state
       ]
 
-    case DELETE_ITEM:
+    case DELETE_NOTE:
       return state.filter(note =>
         note.id !== action.id
       )
 
-    case EDIT_ITEM:
+    case EDIT_NOTE:
       return state.map(note =>
         note.id === action.id ?
           Object.assign({}, note, { text: action.text }) :
