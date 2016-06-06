@@ -9,7 +9,7 @@ class MainSection extends Component {
 
   componentDidMount() {
     setInterval(() => {
-      this.props.actions.updateTime(+new Date());
+      this.props.actions.updateTime();
     }, 5000);
   }
 

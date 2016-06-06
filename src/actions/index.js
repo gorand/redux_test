@@ -16,6 +16,6 @@ export function clearCompleted() {
   return { type: types.CLEAR_COMPLETED }
 }
 
-export function updateTime(time) {
-  return { type: types.UPDATE_TIME, time }
+export function updateTime() {
+  return { type: types.UPDATE_TIME }
 }
