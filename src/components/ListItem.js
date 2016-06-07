@@ -21,7 +21,6 @@ class ListItem extends Component {
     this.setState({ editing: false })
   }
 
-
   elapsedTimeSince(date) {
     const seconds = Math.floor((new Date() - date) / 1000);
 
@@ -54,22 +53,18 @@ class ListItem extends Component {
   }
 
   render() {
-    const { note, completeNote, deleteNote } = this.props
+    const { note, deleteNote } = this.props
 
     let element
     if (this.state.editing) {
       element = (
         <NoteInput text={note.text}
-                       editing={this.state.editing}
-                       onSave={(text) => this.handleSave(note.id, text)} />
+                   editing={this.state.editing}
+                   onSave={(text) => this.handleSave(note.id, text)} />
       )
     } else {
       element = (
         <div className="view">
-          <input className="toggle"
-                 type="checkbox"
-                 checked={note.completed}
-                 onChange={() => completeNote(note.id)} />
           <label onDoubleClick={this.handleDoubleClick.bind(this)}>
             {note.text}
           </label>
@@ -81,10 +76,7 @@ class ListItem extends Component {
     }
 
     return (
-      <li className={classnames({
-        completed: note.completed,
-        editing: this.state.editing
-      })}>
+      <li className={classnames({ editing: this.state.editing })}>
         {element}
       </li>
     )
