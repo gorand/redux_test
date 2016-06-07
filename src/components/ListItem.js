@@ -24,32 +24,36 @@ class ListItem extends Component {
   }
 
 
-timeSince(date) {
+elapsedTimeSince(date) {
 
-    let seconds = Math.floor((new Date() - date) / 1000);
+    const seconds = Math.floor((new Date() - date) / 1000);
 
     let interval = Math.floor(seconds / 31536000);
 
-    if (interval > 1) {
-        return interval + " years";
+    if (interval >= 1) {
+        return `${interval} л. назад`;
     }
     interval = Math.floor(seconds / 2592000);
-    if (interval > 1) {
-        return interval + " months";
+    if (interval >= 1) {
+      return `${interval} мес. назад`;
     }
     interval = Math.floor(seconds / 86400);
-    if (interval > 1) {
-        return interval + " days";
+    if (interval >= 1) {
+      return `${interval} дн. назад`;
     }
     interval = Math.floor(seconds / 3600);
-    if (interval > 1) {
-        return interval + " hours";
+    if (interval >= 1) {
+      return `${interval} ч. назад`;
     }
     interval = Math.floor(seconds / 60);
-    if (interval > 1) {
-        return interval + " minutes";
+    if (interval >= 1) {
+      return `${interval} мин. назад`;
     }
-    return Math.floor(seconds) + " seconds";
+    interval = Math.floor(seconds);
+    if (interval >= 5) {
+      return `${interval} сек. назад`;
+    }
+    return 'только что';
 }
 
 
@@ -73,7 +77,7 @@ timeSince(date) {
           <label onDoubleClick={this.handleDoubleClick.bind(this)}>
             {note.text}
           </label>
-          {this.timeSince(note.date)}
+          {this.elapsedTimeSince(note.date)}
           <button className="destroy"
                   onClick={() => deleteNote(note.id)} />
         </div>
