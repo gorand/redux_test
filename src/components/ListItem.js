@@ -5,9 +5,7 @@ import NoteInput from './NoteInput'
 class ListItem extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      editing: false,
-    }
+    this.state = { editing: false }
   }
 
   handleDoubleClick() {
@@ -24,8 +22,7 @@ class ListItem extends Component {
   }
 
 
-elapsedTimeSince(date) {
-
+  elapsedTimeSince(date) {
     const seconds = Math.floor((new Date() - date) / 1000);
 
     let interval = Math.floor(seconds / 31536000);
@@ -54,8 +51,7 @@ elapsedTimeSince(date) {
       return `${interval} сек. назад`;
     }
     return 'только что';
-}
-
+  }
 
   render() {
     const { note, completeNote, deleteNote } = this.props

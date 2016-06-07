@@ -4,7 +4,6 @@ import rootReducer from '../reducers'
 import persistState, { mergePersistedState } from 'redux-localstorage';
 
 export default function configureStore(initialState) {
-  
   const createPersistentStore = compose(
     persistState()
   )(createStore)
