@@ -1,16 +1,16 @@
 import React, { Component, PropTypes } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import Nav from '../components/Nav'
 import Header from '../components/Header'
 import MainSection from '../components/MainSection'
-import * as TodoActions from '../actions'
+import * as NoteActions from '../actions'
 
 class App extends Component {
   render() {
     const { notes, actions, time } = this.props
     return (
       <div>
-        <Header addNote={actions.addNote} />
         <MainSection time={time} notes={notes} actions={actions} />
       </div>
     )
@@ -31,7 +31,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(TodoActions, dispatch)
+    actions: bindActionCreators(NoteActions, dispatch)
   }
 }
 

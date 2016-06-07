@@ -11,12 +11,6 @@ class Header extends Component {
   render() {
     return (
       <header className="header">
-        <nav>
-          <ul>
-            <li><a href="/">На главную</a></li>
-            <li><a href="/list">Список заметок</a></li>
-          </ul>
-        </nav>
         <h1>Редактор заметок</h1>
         <NoteInput newNote
                        onSave={this.handleSave.bind(this)}
