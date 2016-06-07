@@ -13,7 +13,7 @@ class TextInput extends Component {
     const text = e.target.value.trim()
     if (e.which === 13) {
       this.props.onSave(text)
-      if (this.props.newTodo) {
+      if (this.props.newNote) {
         this.setState({ text: '' })
       }
     }
@@ -24,7 +24,7 @@ class TextInput extends Component {
   }
 
   handleBlur(e) {
-    if (!this.props.newTodo) {
+    if (!this.props.newNote) {
       this.props.onSave(e.target.value)
     }
   }
@@ -34,7 +34,7 @@ class TextInput extends Component {
       <input className={
         classnames({
           edit: this.props.editing,
-          'new-todo': this.props.newTodo
+          'new-todo': this.props.newNote
         })}
         type="text"
         placeholder={this.props.placeholder}
@@ -52,7 +52,7 @@ TextInput.propTypes = {
   text: PropTypes.string,
   placeholder: PropTypes.string,
   editing: PropTypes.bool,
-  newTodo: PropTypes.bool
+  newNote: PropTypes.bool
 }
 
 export default TextInput

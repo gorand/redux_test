@@ -13,10 +13,6 @@ class MainSection extends Component {
     }, 5000);
   }
 
-  handleClearCompleted() {
-    this.props.actions.clearCompleted()
-  }
-
   render() {
     const { notes, actions, time } = this.props
 

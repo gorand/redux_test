@@ -1,4 +1,4 @@
-import { ADD_NOTE, DELETE_NOTE, EDIT_NOTE, CLEAR_COMPLETED } from '../constants/ActionTypes'
+import { ADD_NOTE, DELETE_NOTE, EDIT_NOTE } from '../constants/ActionTypes'
 
 const initialState = []
 
@@ -26,9 +26,6 @@ export default function notes(state = initialState, action) {
           Object.assign({}, note, { text: action.text }) :
           note
       )
-
-    case CLEAR_COMPLETED:
-      return state.filter(note => note.completed === false)
 
     default:
       return state

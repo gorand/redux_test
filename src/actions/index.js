@@ -12,10 +12,6 @@ export function editNote(id, text) {
   return { type: types.EDIT_NOTE, id, text }
 }
 
-export function clearCompleted() {
-  return { type: types.CLEAR_COMPLETED }
-}
-
 export function updateTime(time) {
   return { type: types.UPDATE_TIME, time }
 }

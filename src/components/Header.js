@@ -18,7 +18,7 @@ class Header extends Component {
           </ul>
         </nav>
         <h1>Редактор заметок</h1>
-        <NoteInput newTodo
+        <NoteInput newNote
                        onSave={this.handleSave.bind(this)}
                        placeholder="Напишите свою заметку" />
       </header>
