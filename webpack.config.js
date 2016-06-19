@@ -4,7 +4,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  devtool: 'eval-source-map',
+  devtool: '#eval-source-map',
   entry: [
     'babel-polyfill',
     'webpack-hot-middleware/client?reload=true',
@@ -36,7 +36,7 @@ module.exports = {
           plugins: ['transform-runtime'],
           presets: ['es2015', 'stage-0', 'react'],
         }
-      }, 
+      },
       {
         test: /\.json?$/,
         loader: 'json'
@@ -45,13 +45,11 @@ module.exports = {
         test: /\.css?$/,
         loaders: ['style', 'raw'],
         include: __dirname
-      }, 
-      { test: /\.(jpe?g|png|gif|svg)$/, 
-        loader: 'url', 
-        query: {limit: 10240} 
+      },
+      { test: /\.(jpe?g|png|gif|svg)$/,
+        loader: 'url',
+        query: {limit: 10240}
       }
     ]
   }
 };
-
-
