@@ -2,6 +2,8 @@
 
 var path = require('path');
 var webpack = require('webpack');
+var precss = require('precss');
+var autoprefixer = require('autoprefixer');
 
 module.exports = {
   devtool: '#eval-source-map',
@@ -43,7 +45,7 @@ module.exports = {
       },
       {
         test: /\.css?$/,
-        loaders: ['style', 'raw'],
+        loaders: ['style', 'raw', 'postcss'],
         include: __dirname
       },
       { test: /\.(jpe?g|png|gif|svg)$/,
@@ -51,5 +53,8 @@ module.exports = {
         query: {limit: 10240}
       }
     ]
-  }
+  },
+  postcss: function () {
+       return [precss, autoprefixer];
+   }
 };

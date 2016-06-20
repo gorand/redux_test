@@ -17,7 +17,7 @@ class MainSection extends Component {
     const { notes, actions, time } = this.props
 
     return (
-      <section className="main">
+      <section className='main'>
         <button>
         Список заметок
         <span> { notes.length }</span>
