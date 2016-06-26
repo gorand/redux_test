@@ -19,8 +19,8 @@ class MainSection extends Component {
     return (
       <section className='main'>
         <button>
-        Список заметок
-        <span> { notes.length }</span>
+        Всего заметок
+        <b> { notes.length }</b>
         </button>
 
         <ul className={classnames('todo-list')}>

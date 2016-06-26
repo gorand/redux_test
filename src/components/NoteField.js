@@ -12,6 +12,7 @@ class NoteField extends Component {
   handleSubmit(e) {
     const text = e.target.value.trim()
     if (e.which === 13) {
+      e.preventDefault();
       this.props.onSave(text)
       if (this.props.newNote) {
         this.setState({ text: '' })
@@ -36,6 +37,7 @@ class NoteField extends Component {
           edit: this.props.editing,
           'field': this.props.newNote
         })}
+        rows="1"
         type="text"
         placeholder={this.props.placeholder}
         autoFocus="true"

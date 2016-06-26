@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,300italic,300,700italic);
+
 html,
 body {
   margin: 0;
@@ -18,9 +20,9 @@ button {
 }
 
 body {
-  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font: 14px 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.4em;
-  background: #f5f5f5;
+  background: #ececec;
   color: #4d4d4d;
   min-width: 230px;
   max-width: 550px;
@@ -371,7 +373,15 @@ html .clear-completed:active {
   }
 }
 
+.header {
+  margin-bottom: 15px;
+  &__title {
+    font-size: 26px;
+  }
+}
+
 .nav {
+  margin: 20px 0;
   &__list {
     margin: 10px 0;
     padding: 0;
@@ -401,13 +411,17 @@ html .clear-completed:active {
 .field {
   box-sizing: border-box;
   margin: 0;
-  padding: 6px 12px;
+  padding: 8px 12px;
   width: 100%;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1.5;
-  color: #696969;
+  color: #555;
   background: #f9f9f9;
   border: 1px solid #bdbdbd;
   outline: none;
   -webkit-font-smoothing: antialiased;
+  &:focus {
+    background: #fbfbfb;
+    border-color: #e4e4e4;
+  }
 }

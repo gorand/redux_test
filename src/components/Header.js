@@ -11,7 +11,7 @@ class Header extends Component {
   render() {
     return (
       <header className="header">
-        <h1>Редактор заметок</h1>
+        <h1 className="header__title">Создать</h1>
         <NoteField newNote
                        onSave={this.handleSave.bind(this)}
                        placeholder="Напишите свою заметку" />
