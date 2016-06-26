@@ -389,7 +389,8 @@ html .clear-completed:active {
     text-transform: uppercase;
     color: #FFF;
     background: #965e96;
-    &:hover {
+    &:hover,
+    &:focus {
       opacity: .9;
       text-decoration: none;
       color: #FFF;

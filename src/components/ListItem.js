@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import classnames from 'classnames'
-import NoteInput from './NoteInput'
+import NoteField from './NoteField'
 
 class ListItem extends Component {
   constructor(props) {
@@ -58,7 +58,7 @@ class ListItem extends Component {
     let element
     if (this.state.editing) {
       element = (
-        <NoteInput text={note.text}
+        <NoteField text={note.text}
                    editing={this.state.editing}
                    onSave={(text) => this.handleSave(note.id, text)} />
       )

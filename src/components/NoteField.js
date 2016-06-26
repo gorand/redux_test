@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import classnames from 'classnames'
 
-class TextInput extends Component {
+class NoteField extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -31,7 +31,7 @@ class TextInput extends Component {
 
   render() {
     return (
-      <input className={
+      <textarea className={
         classnames({
           edit: this.props.editing,
           'new-todo': this.props.newNote
@@ -42,12 +42,13 @@ class TextInput extends Component {
         value={this.state.text}
         onBlur={this.handleBlur.bind(this)}
         onChange={this.handleChange.bind(this)}
-        onKeyDown={this.handleSubmit.bind(this)} />
+        onKeyDown={this.handleSubmit.bind(this)}>
+      </textarea>
     )
   }
 }
 
-TextInput.propTypes = {
+NoteField.propTypes = {
   onSave: PropTypes.func.isRequired,
   text: PropTypes.string,
   placeholder: PropTypes.string,
@@ -55,4 +56,4 @@ TextInput.propTypes = {
   newNote: PropTypes.bool
 }
 
-export default TextInput
+export default NoteField
