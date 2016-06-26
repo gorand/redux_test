@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react'
-import NoteInput from './NoteInput'
+import NoteField from './NoteField'
 
 class Header extends Component {
   handleSave(text) {
@@ -12,7 +12,7 @@ class Header extends Component {
     return (
       <header className="header">
         <h1>Редактор заметок</h1>
-        <NoteInput newNote
+        <NoteField newNote
                        onSave={this.handleSave.bind(this)}
                        placeholder="Напишите свою заметку" />
       </header>

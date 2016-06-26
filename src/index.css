@@ -396,5 +396,18 @@ html .clear-completed:active {
       color: #FFF;
     }
   }
+}
 
+.field {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 6px 12px;
+  width: 100%;
+  font-size: 22px;
+  line-height: 1.5;
+  color: #696969;
+  background: #f9f9f9;
+  border: 1px solid #bdbdbd;
+  outline: none;
+  -webkit-font-smoothing: antialiased;
 }
