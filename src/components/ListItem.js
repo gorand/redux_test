@@ -1,6 +1,6 @@
-import React, { Component, PropTypes } from 'react'
-import classnames from 'classnames'
-import NoteField from './NoteField'
+import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
+import NoteField from './NoteField';
 
 class ListItem extends Component {
   constructor(props) {
@@ -9,16 +9,16 @@ class ListItem extends Component {
   }
 
   handleDoubleClick() {
-    this.setState({ editing: true })
+    this.setState({ editing: true });
   }
 
   handleSave(id, text) {
     if (text.length === 0) {
-      this.props.deleteNote(id)
+      this.props.deleteNote(id);
     } else {
-      this.props.editNote(id, text)
+      this.props.editNote(id, text);
     }
-    this.setState({ editing: false })
+    this.setState({ editing: false });
   }
 
   elapsedTimeSince(date) {
@@ -27,7 +27,7 @@ class ListItem extends Component {
     let interval = Math.floor(seconds / 31536000);
 
     if (interval >= 1) {
-        return `${interval} л. назад`;
+      return `${interval} л. назад`;
     }
     interval = Math.floor(seconds / 2592000);
     if (interval >= 1) {
@@ -53,33 +53,33 @@ class ListItem extends Component {
   }
 
   render() {
-    const { note, deleteNote } = this.props
+    const { note, deleteNote } = this.props;
 
-    let element
+    let element;
     if (this.state.editing) {
       element = (
         <NoteField text={note.text}
-                   editing={this.state.editing}
-                   onSave={(text) => this.handleSave(note.id, text)} />
-      )
+         editing={this.state.editing}
+         onSave={(text) => this.handleSave(note.id, text)} />
+       );
     } else {
       element = (
-        <div className="view">
-          <label onDoubleClick={this.handleDoubleClick.bind(this)}>
+        <div className="view note__item">
+          <article className="note__text" onDoubleClick={this.handleDoubleClick.bind(this)}>
             {note.text}
-          </label>
-          {this.elapsedTimeSince(note.date)}
+          </article>
+          <time className="note__time">{this.elapsedTimeSince(note.date)}</time>
           <button className="destroy"
                   onClick={() => deleteNote(note.id)} />
         </div>
-      )
+      );
     }
 
     return (
       <li className={classnames({ editing: this.state.editing })}>
         {element}
       </li>
-    )
+    );
   }
 }
 
@@ -87,6 +87,6 @@ ListItem.propTypes = {
   note: PropTypes.object.isRequired,
   editNote: PropTypes.func.isRequired,
   deleteNote: PropTypes.func.isRequired
-}
+};
 
-export default ListItem
+export default ListItem;

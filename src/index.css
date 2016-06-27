@@ -380,6 +380,29 @@ html .clear-completed:active {
   }
 }
 
+.note {
+  &__wrap {
+    padding: 10px 0;
+  }
+
+  &__list {
+
+  }
+  &__item {
+    margin: 20px 0 5px;
+  }
+  &__text {
+    padding-bottom: 5px;
+    font-size: 26px;
+    line-height: 1.2;
+  }
+  &__time {
+    font-size: 13px;
+    font-weight: 700;
+    color: #6d6d6d;
+  }
+}
+
 .nav {
   margin: 20px 0;
   &__list {
