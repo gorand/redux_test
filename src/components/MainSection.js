@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import ListItem from './ListItem';
+import NoteItem from './NoteItem';
 
 class MainSection extends Component {
   constructor(props) {
@@ -29,7 +29,7 @@ class MainSection extends Component {
 
         <ul className={classnames('todo-list')}>
           {notes.map(item =>
-            <ListItem key={item.id} note={item} {...actions} current={time.current} />
+            <NoteItem key={item.id} note={item} {...actions} current={time.current} />
           )}
         </ul>
       </section>

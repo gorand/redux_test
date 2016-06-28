@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import NoteField from './NoteField';
 
-class ListItem extends Component {
+class NoteItem extends Component {
   constructor(props) {
     super(props)
     this.state = { editing: false }
@@ -64,29 +64,29 @@ class ListItem extends Component {
        );
     } else {
       element = (
-        <div className="view note__item">
+        <div className="view note__item-wrap">
           <article className="note__text" onDoubleClick={this.handleDoubleClick.bind(this)}>
             {note.text}
           </article>
           <time className="note__time">{this.elapsedTimeSince(note.date)}</time>
-          <button className="destroy"
+          <button className="note__remove"
                   onClick={() => deleteNote(note.id)} />
         </div>
       );
     }
 
     return (
-      <li className={classnames({ editing: this.state.editing })}>
+      <li className={'note__item ' + classnames({ editing: this.state.editing })}>
         {element}
       </li>
     );
   }
 }
 
-ListItem.propTypes = {
+NoteItem.propTypes = {
   note: PropTypes.object.isRequired,
   editNote: PropTypes.func.isRequired,
   deleteNote: PropTypes.func.isRequired
 };
 
-export default ListItem;
+export default NoteItem;
