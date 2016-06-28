@@ -34,7 +34,7 @@ class NoteField extends Component {
     return (
       <textarea className={
         classnames({
-          edit: this.props.editing,
+          'field--edit': this.props.editing,
           'field': this.props.newNote
         })}
         rows="1"
