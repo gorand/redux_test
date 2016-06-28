@@ -1,6 +1,6 @@
-import { ADD_NOTE, DELETE_NOTE, EDIT_NOTE } from '../constants/ActionTypes'
+import { ADD_NOTE, DELETE_NOTE, EDIT_NOTE } from '../constants/ActionTypes';
 
-const initialState = []
+const initialState = [];
 
 export default function notes(state = initialState, action) {
   switch (action.type) {
@@ -9,25 +9,24 @@ export default function notes(state = initialState, action) {
         {
           id: state.reduce((maxId, note) => Math.max(note.id, maxId), -1) + 1,
           text: action.text,
-          completed: false,
           date: +new Date(),
         },
         ...state
-      ]
+      ];
 
     case DELETE_NOTE:
       return state.filter(note =>
         note.id !== action.id
-      )
+      );
 
     case EDIT_NOTE:
       return state.map(note =>
         note.id === action.id ?
           Object.assign({}, note, { text: action.text }) :
           note
-      )
+      );
 
     default:
-      return state
+      return state;
   }
 }
