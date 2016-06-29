@@ -1,19 +1,19 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import MainSection from '../components/MainSection';
+import NoteWrap from '../components/NoteWrap';
 import * as NoteActions from '../actions';
 
-class App extends Component {
+class List extends Component {
   render() {
     const { notes, actions, time } = this.props;
     return (
-      <MainSection time={time} notes={notes} actions={actions} />
+      <NoteWrap time={time} notes={notes} actions={actions} />
     );
   }
 }
 
-App.propTypes = {
+List.propTypes = {
   notes: PropTypes.array.isRequired,
   actions: PropTypes.object.isRequired
 };
@@ -34,4 +34,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App);
+)(List);

@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import NoteItem from './NoteItem';
 
-class MainSection extends Component {
+class NoteWrap extends Component {
   constructor(props) {
     super(props);
   }
@@ -21,7 +21,7 @@ class MainSection extends Component {
     const { notes, actions, time } = this.props;
 
     return (
-      <section className='note__wrap'>
+      <section className="note__wrap">
         <button>
         Всего заметок
         <b> { notes.length }</b>
@@ -37,10 +37,10 @@ class MainSection extends Component {
   }
 }
 
-MainSection.propTypes = {
+NoteWrap.propTypes = {
   notes: PropTypes.array.isRequired,
   actions: PropTypes.object.isRequired,
   time: PropTypes.object.isRequired
 };
 
-export default MainSection;
+export default NoteWrap;
