@@ -22,11 +22,6 @@ class NoteWrap extends Component {
 
     return (
       <section className="note__wrap">
-        <button>
-        Всего заметок
-        <b> { notes.length }</b>
-        </button>
-
         <ul className={classnames('todo-list')}>
           {notes.map(item =>
             <NoteItem key={item.id} note={item} {...actions} current={time.current} />

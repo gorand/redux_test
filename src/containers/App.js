@@ -7,10 +7,10 @@ import * as NoteActions from '../actions';
 
 class App extends Component {
   render() {
-    const { actions } = this.props;
+    const { notes, actions } = this.props;
     return (
       <div className="wrapper">
-        <Nav />
+        <Nav notes={notes} />
         <Header addNote={actions.addNote} />
         {this.props.children}
       </div>
