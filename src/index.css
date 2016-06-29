@@ -1,5 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,300italic,300,700italic);
 
+$color-danger: #ec5002;
+$color-primary: #965e96;
+$color-dark: #2d2d2d;
+
 html,
 body {
   margin: 0;
@@ -22,8 +26,8 @@ button {
 body {
   font: 14px 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.4em;
-  background: #ececec;
-  color: #4d4d4d;
+  background: #efefef;
+  color: $color-dark;
   margin: 0 auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -352,7 +356,8 @@ html .clear-completed:active {
 .header {
   margin-bottom: 15px;
   &__title {
-    font-size: 26px;
+    font-size: 30px;
+    font-weight: 100;
   }
 }
 
@@ -375,35 +380,40 @@ html .clear-completed:active {
   }
   &__text {
     padding: 6px 32px 4px 0;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 1.25;
-    text-indent: 0.8em;
-    border-bottom: 1px solid #dadada;
+    text-indent: 1em;
+    border-bottom: 1px solid #e0e0e0;
   }
   &__time {
     font-size: 13px;
+    line-height: 20px;
     font-weight: 700;
-    color: #808080;
+    color: $color-primary;
   }
   &__remove {
     display: none;
     margin: auto 0;
     padding: 0px;
     position: absolute;
-    top: -4px;
+    top: 6px;
     right: 10px;
-    width: 32px;
-    height: 32px;
-    color: #ec5002;
-    border: 1px solid #ec5002;
+    width: 24px;
+    height: 24px;
+    color: $color-danger;
     border-radius: 50%;
-    font-size: 30px;
-    transition: color 0.2s ease-out;
+    font-size: 26px;
+    transition: all 0.35s ease-in-out;
     .note__item:hover & {
       display: block;
     }
+    &:focus {
+      outline: none;
+    }
     &:hover {
-      color: #af5b5e;
+      transform: rotate(-180deg);
+      color: #fff;
+      background: $color-danger;
     }
     &:after {
       content: '×';
@@ -429,7 +439,7 @@ html .clear-completed:active {
     line-height: 1.4;
     text-transform: uppercase;
     color: #FFF;
-    background: #965e96;
+    background: $color-primary;
     &:hover,
     &:focus {
       opacity: .9;
@@ -460,6 +470,6 @@ html .clear-completed:active {
 
 .field--edit:focus {
   padding: 14px;
-  background: #f5f2e9;
+  background: #fbf8ef;
   border: 1px dotted #ababab;
 }
