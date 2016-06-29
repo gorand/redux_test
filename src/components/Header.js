@@ -1,10 +1,10 @@
-import React, { PropTypes, Component } from 'react'
-import NoteField from './NoteField'
+import React, { PropTypes, Component } from 'react';
+import NoteField from './NoteField';
 
 class Header extends Component {
   handleSave(text) {
     if (text.length !== 0) {
-      this.props.addNote(text)
+      this.props.addNote(text);
     }
   }
 
@@ -16,12 +16,12 @@ class Header extends Component {
                        onSave={this.handleSave.bind(this)}
                        placeholder="Напишите свою заметку" />
       </header>
-    )
+    );
   }
 }
 
 Header.propTypes = {
   addNote: PropTypes.func.isRequired
-}
+};
 
-export default Header
+export default Header;

@@ -1,32 +1,32 @@
-import React, { Component, PropTypes } from 'react'
-import classnames from 'classnames'
+import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 
 class NoteField extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       text: this.props.text || ''
-    }
+    };
   }
 
   handleSubmit(e) {
-    const text = e.target.value.trim()
+    const text = e.target.value.trim();
     if (e.which === 13) {
       e.preventDefault();
-      this.props.onSave(text)
+      this.props.onSave(text);
       if (this.props.newNote) {
-        this.setState({ text: '' })
+        this.setState({ text: '' });
       }
     }
   }
 
   handleChange(e) {
-    this.setState({ text: e.target.value })
+    this.setState({ text: e.target.value });
   }
 
   handleBlur(e) {
     if (!this.props.newNote) {
-      this.props.onSave(e.target.value)
+      this.props.onSave(e.target.value);
     }
   }
 
@@ -46,7 +46,7 @@ class NoteField extends Component {
         onChange={this.handleChange.bind(this)}
         onKeyDown={this.handleSubmit.bind(this)}>
       </textarea>
-    )
+    );
   }
 }
 
@@ -56,6 +56,6 @@ NoteField.propTypes = {
   placeholder: PropTypes.string,
   editing: PropTypes.bool,
   newNote: PropTypes.bool
-}
+};
 
-export default NoteField
+export default NoteField;

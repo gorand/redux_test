@@ -1,4 +1,4 @@
-import { UPDATE_TIME } from '../constants/ActionTypes'
+import { UPDATE_TIME } from '../constants/ActionTypes';
 
 const initialState = {
   currentTime: null
