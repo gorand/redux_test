@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import classnames from 'classnames';
 import NoteItem from './NoteItem';
 
 class NoteWrap extends Component {
@@ -22,7 +21,7 @@ class NoteWrap extends Component {
 
     return (
       <section className="note__wrap">
-        <ul className={classnames('todo-list')}>
+        <ul className="note__list">
           {notes.map(item =>
             <NoteItem key={item.id} note={item} {...actions} current={time.current} />
           )}

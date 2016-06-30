@@ -15,7 +15,8 @@ class List extends Component {
 
 List.propTypes = {
   notes: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  time: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
 class Nav extends Component {
@@ -27,5 +27,9 @@ class Nav extends Component {
     );
   }
 }
+
+Nav.propTypes = {
+  notes: PropTypes.array.isRequired
+};
 
 export default Nav;

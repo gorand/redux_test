@@ -4,8 +4,8 @@ import NoteField from './NoteField';
 
 class NoteItem extends Component {
   constructor(props) {
-    super(props)
-    this.state = { editing: false }
+    super(props);
+    this.state = { editing: false };
   }
 
   handleDoubleClick() {
@@ -59,12 +59,12 @@ class NoteItem extends Component {
     if (this.state.editing) {
       element = (
         <NoteField text={note.text}
-         editing={this.state.editing}
-         onSave={(text) => this.handleSave(note.id, text)} />
+                   editing={this.state.editing}
+                   onSave={(text) => this.handleSave(note.id, text)} />
        );
     } else {
       element = (
-        <div className="view note__item-wrap">
+        <div className="note__item-wrap">
           <article className="note__text" onDoubleClick={this.handleDoubleClick.bind(this)}>
             {note.text}
           </article>
@@ -76,7 +76,7 @@ class NoteItem extends Component {
     }
 
     return (
-      <li className={'note__item ' + classnames({ editing: this.state.editing })}>
+      <li className="note__item">
         {element}
       </li>
     );

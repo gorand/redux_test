@@ -9,11 +9,11 @@ class App extends Component {
   render() {
     const { notes, actions } = this.props;
     return (
-      <div className="wrapper">
+      <main className="main">
         <Nav notes={notes} />
         <Header addNote={actions.addNote} />
         {this.props.children}
-      </div>
+      </main>
     );
   }
 }

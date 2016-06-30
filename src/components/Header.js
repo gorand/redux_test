@@ -13,8 +13,8 @@ class Header extends Component {
       <header className="header">
         <h1 className="header__title">Создать</h1>
         <NoteField newNote
-                       onSave={this.handleSave.bind(this)}
-                       placeholder="Напишите свою заметку" />
+                   onSave={this.handleSave.bind(this)}
+                   placeholder="Напишите свою заметку" />
       </header>
     );
   }
