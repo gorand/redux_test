@@ -13,12 +13,12 @@ class Nav extends Component {
       <nav className="nav">
         <ul className="nav__list">
           <li className="nav__item">
-            <Link className="nav__link" to="/">
+            <Link activeClassName='is-active' className="nav__link" to="/">
               На главную
             </Link>
           </li>
           <li className="nav__item">
-            <Link className="nav__link" to="list">
+            <Link activeClassName="is-active" className="nav__link" to="list">
               Список заметок {notes.length ? <span className="nav__count">{notes.length}</span> : null}
             </Link>
           </li>
