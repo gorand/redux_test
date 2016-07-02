@@ -13,8 +13,8 @@ class Nav extends Component {
       <nav className="nav">
         <ul className="nav__list">
           <li className="nav__item">
-            <Link activeClassName='is-active' className="nav__link" to="/">
-              На главную
+            <Link activeClassName='is-active' className="nav__link" to="about">
+              Главная
             </Link>
           </li>
           <li className="nav__item">
