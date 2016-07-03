@@ -17,7 +17,7 @@ render(
     <Router history={createBrowserHistory()}>
       <Route path="/" component={App} >
         <IndexRoute component={Info} />
-        <Route path="about" component={Info} />
+        <Route path="index" component={Info} />
         <Route path="list" component={List} />
       </Route>
     </Router>
