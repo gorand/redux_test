@@ -9,7 +9,7 @@ class NoteWrap extends Component {
   componentDidMount() {
     this.interval = setInterval(() => {
       this.props.actions.updateTime(new Date());
-    }, 5000);
+    }, 10000);
   }
 
   componentWillUnmount() {

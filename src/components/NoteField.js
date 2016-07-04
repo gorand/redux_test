@@ -39,7 +39,6 @@ class NoteField extends Component {
         })}
         rows="1"
         type="text"
-        placeholder={this.props.placeholder}
         autoFocus="true"
         value={this.state.text}
         onBlur={this.handleBlur.bind(this)}
@@ -53,7 +52,6 @@ class NoteField extends Component {
 NoteField.propTypes = {
   onSave: PropTypes.func.isRequired,
   text: PropTypes.string,
-  placeholder: PropTypes.string,
   editing: PropTypes.bool,
   newNote: PropTypes.bool
 };

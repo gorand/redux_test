@@ -12,7 +12,7 @@ module.exports = {
     path.join(__dirname, 'src/index.js')
   ],
   output: {
-    path: path.join(__dirname, '/dist'),
+    path: path.join(__dirname, 'dist'),
     filename: 'bundle.js'
   },
   plugins: [
@@ -42,23 +42,23 @@ module.exports = {
           plugins: ['transform-runtime'],
           presets: ['es2015', 'stage-0', 'react'],
         }
-      }, 
+      },
       {
         test: /\.json?$/,
         loader: 'json'
-      }, 
+      },
       {
         test: /\.css?$/,
           loaders: ['style', 'raw', 'postcss'],
           include: __dirname
       },
-      { test: /\.(jpe?g|png|gif|svg)$/, 
-        loader: 'url', 
-        query: {limit: 10240} 
+      { test: /\.(jpe?g|png|gif|svg)$/,
+        loader: 'url',
+        query: {limit: 10240}
       }
     ]
   },
   postcss: function () {
     return [precss, autoprefixer];
-  }  
+  }
 };

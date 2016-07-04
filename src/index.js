@@ -5,8 +5,7 @@ import { Provider } from 'react-redux';
 import App from './containers/App';
 import List from './containers/List';
 import Info from './containers/Info';
-import { Router, Route, IndexRoute } from 'react-router';
-import createBrowserHistory from 'history/lib/createBrowserHistory';
+import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import configureStore from './store/configureStore';
 import './index.css';
 
@@ -14,7 +13,7 @@ const store = configureStore();
 
 render(
   <Provider store={store}>
-    <Router history={createBrowserHistory()}>
+    <Router history={hashHistory}>
       <Route path="/" component={App} >
         <IndexRoute component={Info} />
         <Route path="index" component={Info} />
