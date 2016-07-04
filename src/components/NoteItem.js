@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import classnames from 'classnames';
 import NoteField from './NoteField';
 
 class NoteItem extends Component {
@@ -59,8 +58,8 @@ class NoteItem extends Component {
     if (this.state.editing) {
       element = (
         <NoteField text={note.text}
-                   editing={this.state.editing}
-                   onSave={(text) => this.handleSave(note.id, text)} />
+         editing={this.state.editing}
+         onSave={(text) => this.handleSave(note.id, text)} />
        );
     } else {
       element = (
