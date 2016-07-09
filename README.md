@@ -1,6 +1,6 @@
 
 React and Redux web application
-[Demo](http://http://gorand.github.io/redux_test)
+[Demo](http://gorand.github.io/redux_test)
 
 ### Overview
 
