@@ -1,7 +1,7 @@
 {
-  "name": "react-redux-starter-kit",
-  "version": "0.0.1",
-  "description": "Yet another React/Redux Starter Kit",
+  "name": "react-redux-note-list",
+  "version": "1.0.0",
+  "description": "Boilerplate for React Redux",
   "scripts": {
     "start": "babel-node server.js",
     "build": "rimraf dist && NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors",
@@ -18,13 +18,10 @@
     "redux",
     "reduxjs",
     "react-router",
-    "bootstrap",
     "webpack",
-    "flux",
     "jwt",
     "autho0",
-    "dashboard",
-    "boilerplate"
+    "dashboard"
   ],
   "author": "Andrey Gordeev (https://github.com/gorand)",
   "license": "MIT",
